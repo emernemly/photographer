@@ -6,14 +6,14 @@ const photos = [
   'photov.jpg',
   'photou.jpg',
   'photot.jpg',
-  'photos.jpg',
+  'family.jpeg',
   'photor.jpg',
   'photoq.jpg',
   'photop.jpg',
   'photon.jpg',
 
-  'photom.jpg',
-  'photol.jpg',
+  'texttow.jpeg',
+  'girl.jpeg',
   'photok.jpg',
   'photoj.jpg',
   'photoi.jpg',
@@ -88,12 +88,6 @@ window.addEventListener('scroll', () => {
 });
 back.addEventListener('click', scrollToTop);
 
-window.addEventListener('scroll', () => {
-  if (window.innerHeight + window.scrollY == document.body.clientHeight) {
-    console.log('hi');
-    social.classList.remove('scroll');
-  }
-});
 const sections = document.querySelectorAll('section[id]');
 console.log(sections);
 function scrollActive() {
@@ -114,4 +108,27 @@ function scrollActive() {
     }
   });
 }
-window.addEventListener('scroll', scrollActive);
+window.addEventListener('scroll', () => {
+  scrollActive;
+
+  if (window.innerHeight + window.scrollY >= document.body.clientHeight - 0.5) {
+    console.log('hi');
+    social.classList.remove('scroll');
+  }
+});
+function sendemail() {
+  console.log(document.getElementById('from').value);
+  var temParams = {
+    from_name: document.getElementById('toName').value,
+    email_id: document.getElementById('from').value,
+    message: document.getElementById('msg').value,
+  };
+
+  emailjs.send('service_7pmzvle', 'template_fkmpv59', temParams).then((res) => {
+    console.log('success', res.status);
+  });
+
+  var form = document.querySelector('.footer-contant');
+  form.innerHTML =
+    '<h2> Thank you we received your email and we will get back to you soon </h2>';
+}
