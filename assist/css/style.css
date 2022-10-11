@@ -4,7 +4,9 @@
   padding: 0;
   margin: 0;
 }
-
+body {
+  font-family: 'Alkalami', serif !important;
+}
 p {
   color: #808080;
 }
@@ -136,7 +138,6 @@ section {
   font-weight: 400;
   letter-spacing: 0.005em;
 
-  font-family: Gilda Display;
   text-transform: none;
   font-style: italic;
 }
@@ -155,7 +156,7 @@ section {
   font-weight: 400;
   letter-spacing: 0.005em;
   /* line-height: 94px; */
-  font-family: Gilda Display;
+
   text-transform: none;
   font-style: italic;
 }
@@ -168,7 +169,7 @@ section {
   font-weight: 400;
   letter-spacing: 0.005em;
   /* line-height: 94px; */
-  font-family: Gilda Display;
+
   text-transform: none;
   font-style: italic;
 }
