@@ -521,6 +521,7 @@ textarea {
   .slideimag {
     height: 635px !important;
     align-items: flex-end;
+    text-align: center;
   }
   .slideimag-contant {
     flex-direction: column;
