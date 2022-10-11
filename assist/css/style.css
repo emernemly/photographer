@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
 }
+
 p {
   color: #808080;
 }
@@ -66,7 +67,7 @@ header {
   letter-spacing: 0.005em;
   line-height: 94px;
 
-  font-family: Gilda Display;
+  font-family: 'Alkalami', serif;
   text-transform: none;
   font-style: italic;
 }
