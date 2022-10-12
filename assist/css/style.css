@@ -7,6 +7,10 @@
 body {
   font-family: 'Alkalami', serif !important;
 }
+
+button {
+  font-family: initial !important;
+}
 p {
   color: #808080;
 }
