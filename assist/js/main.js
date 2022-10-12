@@ -132,3 +132,7 @@ function sendemail() {
   form.innerHTML =
     '<h2> Thank you we received your email and we will get back to you soon </h2>';
 }
+const load = document.getElementById('preload');
+window.addEventListener('load', () => {
+  load.style.display = 'none';
+});
