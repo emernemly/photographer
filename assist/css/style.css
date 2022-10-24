@@ -214,6 +214,29 @@ section {
 .photo img:hover {
   transform: scale(1.2);
 }
+.slicephoto {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.slicephoto button {
+  background-color: transparent;
+  border: 1px solid #000;
+  outline: none;
+
+  padding: 10px 20px;
+  font-size: 20px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+.slicephoto button:hover {
+  background-color: #000;
+  color: #fff;
+}
 .bg-black {
   background-color: #000000;
 }
