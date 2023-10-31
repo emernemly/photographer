@@ -83,7 +83,7 @@ const getData = async (url) => {
 const url = 'http://localhost:4000/api/gallery';
 try {
   const data = getData(url);
-  console.log(data);
+  console.log(data.data);
   photos = data;
 } catch (error) {
   console.log(error.message);
