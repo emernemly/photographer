@@ -77,7 +77,7 @@ getMovie(url);
 async function getMovie(url) {
   const resp = await fetch(url);
   photos = await resp.json();
-  console.log(respdata);
+  console.log(photos);
   showGallery(photos);
 }
 /* 
