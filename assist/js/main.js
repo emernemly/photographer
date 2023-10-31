@@ -72,7 +72,20 @@ const photos = [
   'fdce2482b67777aff8932bf0995abf4.jpg',
   'texttow.jpeg',
 ];
-console.log(photos.length);
+
+fetch('https://admin-obai-kharboutli-back-end.onrender.com/api/gallery')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    photos = response.json(); // Parse the response body as JSON
+  })
+  .then((data) => {
+    console.log(data); // Use the fetched data
+  })
+  .catch((error) => {
+    console.error('Fetch error:', error);
+  });
 let start = 0;
 let end = 9;
 function slicing(start, end) {
