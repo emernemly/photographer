@@ -73,7 +73,9 @@ const photos = [
   'texttow.jpeg',
 ];
 
-fetch('https://admin-obai-kharboutli-back-end.onrender.com/api/gallery')
+fetch('https://admin-obai-kharboutli-back-end.onrender.com/api/gallery', {
+  credentials: 'include',
+})
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
