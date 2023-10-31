@@ -81,10 +81,10 @@ fetch('http://localhost:4000/api/gallery', {
       throw new Error('Network response was not ok');
     }
     photos = await response.json();
-    console.log(photos); // Parse the response body as JSON
+    console.log({ own: photos }); // Parse the response body as JSON
   })
   .then((data) => {
-    console.log(data); // Use the fetched data
+    console.log({ tow: data }); // Use the fetched data
   })
   .catch((error) => {
     console.error('Fetch error:', error);
