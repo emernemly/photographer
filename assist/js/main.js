@@ -73,22 +73,24 @@ let photos = [
   'texttow.jpeg',
 ];
 
-fetch('http://localhost:4000/api/gallery', {
-  credentials: 'include',
-})
-  .then(async (response) => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    photos = await response.json();
-    console.log({ own: photos }); // Parse the response body as JSON
+async function getdata() {
+  await fetch('http://localhost:4000/api/gallery', {
+    credentials: 'include',
   })
-  .then((data) => {
-    console.log({ tow: data }); // Use the fetched data
-  })
-  .catch((error) => {
-    console.error('Fetch error:', error);
-  });
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      photos = await response.json();
+      console.log({ own: photos }); // Parse the response body as JSON
+    })
+    .then((data) => {
+      console.log({ tow: data }); // Use the fetched data
+    })
+    .catch((error) => {
+      console.error('Fetch error:', error);
+    });
+}
 
 let start = 0;
 let end = 9;
