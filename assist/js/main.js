@@ -73,7 +73,7 @@ const photos = [
   'texttow.jpeg',
 ];
 
-fetch('https://admin-obai-kharboutli-back-end.onrender.com/api/gallery', {
+fetch('http://localhost:4000/api/gallery', {
   credentials: 'include',
 })
   .then((response) => {
