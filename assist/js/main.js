@@ -80,11 +80,11 @@ fetch('http://localhost:4000/api/gallery', {
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    photos = await response.json();
-    console.log(photos); // Parse the response body as JSON
+    await response.json(); // Parse the response body as JSON
   })
   .then((data) => {
-    console.log(data); // Use the fetched data
+    photos = data; // Use the fetched data
+    console.log(photos);
   })
   .catch((error) => {
     console.error('Fetch error:', error);
@@ -104,7 +104,7 @@ function showGallery(photo) {
     gallerys.innerHTML = `
 
      
-        <a href="assist/images/${pht}" data-lightbox="mygallery" ><img src="assist/images/${pht}"></a>
+        <a href="${pht.file}" data-lightbox="mygallery" ><img src="${pht.file}"></a>
 
       `;
     gallery.appendChild(gallerys);
