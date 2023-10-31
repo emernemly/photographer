@@ -82,7 +82,7 @@ const getData = async (url) => {
 };
 const url = 'http://localhost:4000/api/gallery';
 try {
-  const data = await getData(url);
+  const data = getData(url);
   console.log(data);
   photos = data;
 } catch (error) {
