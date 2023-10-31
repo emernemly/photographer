@@ -4,13 +4,15 @@ const social = document.getElementById('social-top');
 const navbar = document.querySelector('.navbar');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
+const loadingElement = document.getElementById('loading');
 let photos = [];
 const url = 'http://localhost:4000/api/gallery';
 getMovie(url);
 async function getMovie(url) {
+  loadingElement.style.display = 'block';
   const resp = await fetch(url);
   photos = await resp.json();
-  console.log(photos);
+  loadingElement.style.display = 'none';
   showGallery(photos);
 }
 /* 
