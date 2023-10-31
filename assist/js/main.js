@@ -4,7 +4,7 @@ const social = document.getElementById('social-top');
 const navbar = document.querySelector('.navbar');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
-const photos = [
+let photos = [
   'photov.jpg',
   'photou.jpg',
   'photot.jpg',
