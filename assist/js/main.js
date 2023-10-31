@@ -81,10 +81,10 @@ async function getdata() {
         throw new Error('Network response was not ok');
       }
       photos = await response.json();
-      console.log({ photos: photos }); // Parse the response body as JSON
+      console.log(photos); // Parse the response body as JSON
     })
     .then((data) => {
-      console.log({ data: data }); // Use the fetched data
+      console.log(data); // Use the fetched data
     })
     .catch((error) => {
       console.error('Fetch error:', error);
