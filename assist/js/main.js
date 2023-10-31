@@ -72,8 +72,16 @@ let photos = [
   'fdce2482b67777aff8932bf0995abf4.jpg',
   'texttow.jpeg',
 ];
-
-await fetch('http://localhost:4000/api/gallery', {
+const url = 'http://localhost:4000/api/gallery';
+getMovie(url);
+async function getMovie(url) {
+  const resp = await fetch(url);
+  photos = await resp.json();
+  console.log(respdata);
+  showGallery(photos);
+}
+/* 
+fetch('http://localhost:4000/api/gallery', {
   credentials: 'include',
 })
   .then(async (response) => {
@@ -89,7 +97,7 @@ await fetch('http://localhost:4000/api/gallery', {
   })
   .catch((error) => {
     console.error('Fetch error:', error);
-  });
+  }); */
 
 let start = 0;
 let end = 9;
