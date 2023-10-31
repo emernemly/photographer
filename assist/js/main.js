@@ -80,7 +80,8 @@ fetch('http://localhost:4000/api/gallery', {
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    photos = response.json(); // Parse the response body as JSON
+    photos = response.json().file;
+    console.log(photos); // Parse the response body as JSON
   })
   .then((data) => {
     console.log(data); // Use the fetched data
