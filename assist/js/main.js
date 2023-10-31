@@ -113,7 +113,7 @@ function showGallery(photo) {
     gallerys.innerHTML = `
 
      
-        <a href="assist/images/${pht}" data-lightbox="mygallery" ><img src="assist/images/${pht}"></a>
+        <a href="${pht.file}" data-lightbox="mygallery" ><img src="${pht.file}"></a>
 
       `;
     gallery.appendChild(gallerys);
