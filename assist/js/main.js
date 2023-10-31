@@ -9,7 +9,7 @@ let photos = [];
 const url = 'http://localhost:4000/api/gallery';
 getMovie(url);
 async function getMovie(url) {
-  loadingElement.style.display = 'block';
+  loadingElement.style.display = 'flex';
   const resp = await fetch(url);
   photos = await resp.json();
   loadingElement.style.display = 'none';
