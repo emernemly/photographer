@@ -72,39 +72,25 @@ let photos = [
   'fdce2482b67777aff8932bf0995abf4.jpg',
   'texttow.jpeg',
 ];
-const getData = async (url) => {
-  const response = await fetch(url, {
+async function getdata() {
+  await fetch('http://localhost:4000/api/gallery', {
     credentials: 'include',
-  });
-  const json = await response.json();
-
-  return json;
-};
-const url = 'http://localhost:4000/api/gallery';
-try {
-  const data = getData(url);
-  console.log(data.data);
-  photos = data;
-} catch (error) {
-  console.log(error.message);
+  })
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      photos = await response.json();
+      console.log({ photos: photos }); // Parse the response body as JSON
+    })
+    .then((data) => {
+      console.log({ data: data }); // Use the fetched data
+    })
+    .catch((error) => {
+      console.error('Fetch error:', error);
+    });
 }
 
-/* fetch('http://localhost:4000/api/gallery', {
-  credentials: 'include',
-})
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    photos = await response.json();
-    console.log(photos); // Parse the response body as JSON
-  })
-  .then((data) => {
-    console.log(data); // Use the fetched data
-  })
-  .catch((error) => {
-    console.error('Fetch error:', error);
-  }); */
 let start = 0;
 let end = 9;
 function slicing(start, end) {
