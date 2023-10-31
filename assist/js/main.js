@@ -6,11 +6,13 @@ const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const loadingElement = document.getElementById('loading');
 let photos = [];
-const url = 'http://localhost:4000/api/gallery';
+const url = 'https://admin-obai-kharboutli-back-end.onrender.com/api/gallery';
 getMovie(url);
 async function getMovie(url) {
   loadingElement.style.display = 'flex';
-  const resp = await fetch(url);
+  const resp = await fetch(url, {
+    withCredentials: true,
+  });
   photos = await resp.json();
   loadingElement.style.display = 'none';
   showGallery(photos);
